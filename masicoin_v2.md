@@ -97,12 +97,11 @@ Other DLT initiatives propose visionary technologies and appealing solutions. Ho
 
 #Conclusion
 
-Healthcare can definitely exploit the DLTs. We saw that a product with interfaces and algorithms supported by only one single vendor or organization cannot be the ideal solution, since it goes against the concepts of the continuum (the software asset which survives to its creator), and vendor lock-in, elevating the risks of project failures and, most important, jeopardizing the patient safety. Also, storing data (even encrypted) in the blockchain is also a weak idea due to performance and security.
-
-However blockchain can give a very important contribution in healthcare: patient matching, and resource consumption rewards.
+Healthcare can definitely exploit the DLTs for instance in patient matching, and resource consumption rewards. 
 
 Patient matching is the typical case when a patient, or even a doctor, has to be identified and authenticated. Here there are interesting ideas such as the concept of self-sovereign identities, clinical research, etc. [More information can be found here](https://healthcaresecprivacy.blogspot.com/2017/03/healthcare-blockc hain-use.html).
 
+We saw that a product with interfaces and algorithms supported by only one single vendor or organization cannot be the ideal solution, since it goes against the concepts of the continuum (the software asset which survives to its creator), and vendor lock-in, elevating the risks of project failures and, most important, jeopardizing the patient safety. Also, storing data (even encrypted) in the blockchain is also a weak idea due to performance and security.
 
 #References
 
