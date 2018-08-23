@@ -104,6 +104,7 @@ Patient matching involves the typical case when a patient, or even a doctor, has
 We see that a product with interfaces and algorithms supported by only one single vendor or organisation cannot be the ideal solution, since it goes against the concepts of the continuum (the software asset which survives to its creator), and produces vendor lock-in, elevating the risks of project failures and, most important, jeopardising patient safety. Also, storing data (even encrypted) in the blockchain is also a weak idea due to performance and security issues.
 
 #Special Thanks
+
 Special thanks to my colleagues and to the [FLUG](http://www.firenze.linux.it) for their help.
 
 #References
