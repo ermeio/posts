@@ -1,6 +1,6 @@
 #Disclaimer
 
-I am advising a [DLT Healthcare project](http://grapevineworldtoken.io).
+I am advising a [Blockchain/Distributed Ledger Technology (DLT) Healthcare project](http://grapevineworldtoken.io).
 
 #Introduction
 
@@ -17,7 +17,7 @@ Now, let us imagine an emergency room. A patient arrives unconscious and the doc
 
 #Standards are not enough
 
-Interoperability is compelling, but how is interoperability achieved? [Bass et al.] identify interoperability as _the degree to which two or more systems can usefully exchange meaningful information via interfaces in a particular context._ Luckily, it is unrealistic to imagine a world sharing the same software globally (see Section on EIF); thus different vendors around the globe must agree on a common rules for interoperability, but to which extent?
+Interoperability is compelling, but how is interoperability achieved? [Bass et al.] identify interoperability as _the degree to which two or more systems can usefully exchange meaningful information via interfaces in a particular context._ On the bright side, a world working on a unique software infrastructure it’s a not a realistic scenario (see Section on EIF); thus different vendors around the globe must agree on a common rules for interoperability, but to which extent?
 
 Interoperability has different levels. The most prominent worldwide healthcare IT society, HiMMS, further narrows the definition of interoperability, assigning it [three levels](https://www.himss.org/library/interoperability-standards/what-is):
 
@@ -35,7 +35,7 @@ The EU e-SENS project introduced [5 more interoperability layers](http://wiki.ds
 
 The HiMMS definition stops at the second level, while e-SENS, is a project that aims to share healthcare data between different countries, has added both organisational and legal interoperability.
 
-Vendors shall apply to common rules. Those rules are international standards. Still, Grace Lewis ([Bass et al.]) explicitly mention that "standards alone are not enough to guarantee interoperability". Andy Tanembaum once said ["The nice thing about standards is that you have so many to choose from"](https://en.wikiquote.org/wiki/Andrew_S._Tanenbaum) which is undoubtedly true.
+Vendors shall apply to common rules. Those rules are international data exchange standards. Still, Grace Lewis ([Bass et al.]) explicitly mention that "standards alone are not enough to guarantee interoperability". Andy Tanembaum once said ["The nice thing about standards is that you have so many to choose from"](https://en.wikiquote.org/wiki/Andrew_S._Tanenbaum) which is undoubtedly true.
 
 Standards, without any governance, do not really achieve interoperability. Anyone can introduce a standard! But it shall be supported, implementable, testable, and _free_.
 
