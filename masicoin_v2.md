@@ -46,7 +46,7 @@ Here are some elements to consider:
 * electronic message types
 * security models
 
-This is a scenario where an architecture **(<= per me qui devi specificare che tipo di architettura, architettura in generale e' un po' vago)** would help.
+This is a scenario where a properly designed IT software architecture would help.
 
 ## Standards are not enough
 
