@@ -1,45 +1,82 @@
-#Disclaimer
+# Disclaimer
 
-I am advising a [Blockchain/Distributed Ledger Technology (DLT) Healthcare project](http://grapevineworldtoken.io).
+I am advising on Blockchain/Distributed Ledger Technology (DLT) for the [Grapevine Healthcare project](http://grapevineworldtoken.io).
 
-#Introduction
+# Introduction
 
-This article talks about interoperability and blockchain in the healthcare domain. 
-There are two parts to this article. The first part explains how healthcare Information Technology achieves interoperability, and in the second part exposes some common pitfalls of blockchain use cases (IMHO) that I became aware of while attending some (strange) DLT-related events.
+This article discusses the issue of interoperability and blockchain in the healthcare domain.
 
-#Interoperability
+There article is organised into two parts:
 
-The roots of IT system use within the healthcare domain go back to the 80s, with the advent of initiatives such as DICOM (->http://dicom.nema.org), and Health Level 7 (->http://hl7.org) which introduced an initial digitalisation step.
+* The first part explains how healthcare Information Technology could achieve a good level of interoperability.
+* The second part exposes what I consider some common pitfalls affecting a number of blockchain use-cases that were brought to my attention while attending some DLT-related events.
 
-[ISO 27002](https://en.wikipedia.org/wiki/ISO/IEC_27002) defines the guidelines for IT system security as per CIA triad, Confidentiality, Integrity, and Availability. In particular, availability _[ensures that authorised users have access to information and associated assets when required](https://en.wikipedia.org/wiki/Availability)._
+# Part 1
 
-Now, let us imagine an emergency room. A patient arrives unconscious and the doctor needs to decide whether or not to treat the patient with a specific antibiotic. The doctor doesn't know about any potential allergies, so the doctor checks their local IT system for the patient's medical record (remember, since the 90s electronic medical records have been available and are the exclusive medical record format in some parts of the world). The emergency room client software uses HL7v3 and tries to access the central clinical document repository, which, in contrast, only understands HL7 FHIR,. There is no interoperability between the HL7v3 client system and the FHIR repository system (the lack or architecture is evident, and this is likely to lead to vendor lock-in). The patient's _safety_ is at risk, since the medical records are not _available._ Now, extend this to a global scale, for instance, the patient is travelling in a foreign country, and the doctor needs to fetch medical records from the patient's home country. Can you evaluate the risk of not having interoperability? Just imagine some of the elements to consider, including language barriers, medical disciplines, medicine types, dosage variance, electronic message types, security models, to name a few. This is an example where architecture would help.
+## Interoperability
 
-#Standards are not enough
+The introduction of IT systems in the healthcare domain began in the 80s, with the advent of initiatives such as [DICOM](http://dicom.nema.org), and [Health Level 7](http://hl7.org) which introduced an initial digitalisation step.
 
-Interoperability is compelling, but how is interoperability achieved? [Bass et al.] identify interoperability as _the degree to which two or more systems can usefully exchange meaningful information via interfaces in a particular context._ On the bright side, a world working on a unique software infrastructure it’s a not a realistic scenario (see Section on EIF); thus different vendors around the globe must agree on a common rules for interoperability, but to which extent?
+The [ISO 27002](https://en.wikipedia.org/wiki/ISO/IEC_27002) specification defines the guidelines for IT system security regarding CIA triad, Confidentiality, Integrity, and Availability.
 
-Interoperability has different levels. The most prominent worldwide healthcare IT society, HiMMS, further narrows the definition of interoperability, assigning it [three levels](https://www.himss.org/library/interoperability-standards/what-is):
+Availability in particular _[ensures that authorised users have access to information and associated assets when required](https://en.wikipedia.org/wiki/Availability)._
+
+#### A common scenario
+
+We're in an emergency room of a hospital. A patient arrives unconscious and the doctor needs to decide whether or not to treat him with a specific antibiotic. 
+
+The doctor doesn't know anything about the pre-existing medical conditions of the patient—like potential allergies—so he searches the hospital's local IT system for ther patient's medical records (remember, since the 90s electronic medical records have been available and in some parts of the world they only exist in digital format). 
+
+The emergency room client software uses `HL7v3` and tries to access the central clinical document repository, which—by contrast—only understands `HL7 FHIR`.
+
+No interoperability is possible between the `HL7v3` client system and the `FHIR` repository system. The lack or architecture is evident, and this is likely to lead to vendor lock-in.
+
+The patient's _safety_ is at risk, since the medical records are not _available._
+
+Now, let's look at the issue in a global scale scenario. Let's say, for example, that the patient is in a foreign country travelling, and the doctor needs to fetch medical records from the patient's home country.
+
+Can you evaluate the risk of not having interoperability?
+
+Here are some elements to consider:
+
+* language barriers
+* medical disciplines
+* medicine types
+* dosage variance
+* electronic message types
+* security models
+
+This is a scenario where an architecture **(<= per me qui devi specificare che tipo di architettura, architettura in generale e' un po' vago)** would help.
+
+## Standards are not enough
+
+The case for interoperability is compelling, but how do we achieve it?
+
+[Bass et al.] identify interoperability as _the degree to which two or more systems can usefully exchange meaningful information via interfaces in a particular context._ A world working on a unique software infrastructure it’s a not a realistic scenario (see Section on EIF); thus different vendors around the globe must agree on common rules for interoperability, but to which extent?
+
+Here is how HiMMS, the most prominent worldwide healthcare IT society, [defines interoperability](https://www.himss.org/library/interoperability-standards/what-is):
 
 _In healthcare, interoperability is the ability of different information technology systems and software applications to communicate, exchange data, and use the information that has been exchanged. Data exchange schema and standards should permit data to be shared across clinician, lab, hospital, pharmacy, and patient regardless of the application or application vendor._
 
-#The HiMMS levels are: 
+There are three levels of health information technology interoperability:
 
 1. **Foundational** (at the level of message exchange),
 2. **Structural** (the format of data exchange)
 3. **Semantical** (at the level of the information exchanged). 
 
-The EU e-SENS project introduced [5 more interoperability layers](http://wiki.ds.unipi.gr/display/ESENS) as shown in the picture below.
+The EU e-SENS project introduced [5 more interoperability levels](http://wiki.ds.unipi.gr/display/ESENS) as shown in the picture below:
 
 ![# e-SENS Technical Levels](http://www.mascanc.net/tl.png "e-SENS Interoperability Levels")
 
-The HiMMS definition stops at the second level, while e-SENS, is a project that aims to share healthcare data between different countries, has added both organisational and legal interoperability.
+The HiMMS definition stops at the second level, while e-SENS has added both organisational and legal interoperability to the mix, because cross country interoperability is one of the aim of the project.
 
-Vendors shall apply to common rules. Those rules are international data exchange standards. Still, Grace Lewis ([Bass et al.]) explicitly mention that "standards alone are not enough to guarantee interoperability". Andy Tanembaum once said ["The nice thing about standards is that you have so many to choose from"](https://en.wikiquote.org/wiki/Andrew_S._Tanenbaum) which is undoubtedly true.
+Vendors shall apply to common rules. Those rules are international data exchange standards. Still, Grace Lewis ([Bass et al.]) explicitly mention that _"standards alone are not enough to guarantee interoperability"_.
 
-Standards, without any governance, do not really achieve interoperability. Anyone can introduce a standard! But it shall be supported, implementable, testable, and _free_.
+Andy Tanembaum once said ["The nice thing about standards is that you have so many to choose from"](https://en.wikiquote.org/wiki/Andrew_S._Tanenbaum) which is undoubtedly true.
 
-#The need for Enterprise Architectures
+Standards, without any governance, cannot really achieve interoperability. Anyone can introduce a standard! But in order to get adopted it ought to be supported, implementable, testable, and _free_.
+
+## The need for Enterprise Architectures
 
 Enterprise Architectures come to the rescue. In fact, another architectural step has to be adopted, precisely the establishment of a governing structure over the precise selection of standards, to ensure a continuum of the economic and technical investments, such that a chosen technology will survive beyond the vendors proposing it and the possible deviations from the original intended standards. Having a so-called Vendor Neutral Architecture (VNA) provides an example of this. These concepts feed into to the definition of _enterprise architecture_. 
 
@@ -52,7 +89,7 @@ Agilists may comment that architeture it's a BDUF, and YAGNI. That's a false fac
 
 [TOGAF](http://www.opengroup.org/subjectareas/enterprise/togaf), and [IHE](http://www.ihe.net) provide a methdological means to define the solution and reference architectures. In particular, IHE has been regulated by the EU commission with decision ​[**(EU) 2015/1302 of 28 July 2015**](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_ 99_R_0011).
 
-#Choosing a standard, or a single product, is a bad idea.
+## Choosing a standard, or a single product, is a bad idea.
 
 We, therefore, understand that we need interoperability to develop and choose sofwtware for healthcare. To achieve interoperability we need a standard, no, wait, we need a _organisation_ which supports and governs the standards, then we need to test, certify, oh my! Isn't it better to all select the same prodfuct and deploy it worldwide? No. Here the story of the European Interoperability Framework (EIF) and the Free Software Foundation comes into play.
 
@@ -62,9 +99,9 @@ _Looking back to the consultation draft, it is obvious that during the developme
 
 The basic idea of the Business Software Alliance lobbying was that software _homogeneity_ guarantees interoperability, while other approaches, well, probably not. BSA clearly wanted to achieve a vendor lock-in situation, disqualifying the continuum concept described above. The EIFv3 (or the New EIF) explicitly promotes open standards, and [Free Software has been indicated as one of the factors of enhanced interoperability](https://fsfe.org/activities/os/eif-v3.en.html).
 
-#Part 2
+# Part 2
 
-##Blockchain and Interoperability
+## Blockchain and Interoperability
 
 Blockchain is a distributed ledger, and is, in this text from now on referred to as a Distributed Ledger Technology (DLT). [Wattenhofer] defines the blockchain _as the longest path from the genesis block, i.e., root of the tree, to a leaf. The blockchain acts as a consistent transaction history on which all nodes eventually agree._ On each transaction some code can be executed in different ways and takes different names (e.g., Smart Contracts, Chaincode, etc). From this definition it should be clear what a blockchain is not: *an efficient database*. Storing unstructured data in a blockchain guarantees poor performance but still, depends on the blockchain deployment, whether public or private and on the consensus algorithm. [Here](https://blockchainatberkeley.blog/building-it-better-a-simple-guide-to- blockchain-use-cases-de494a8f5b60) and [here](https://eprint.iacr.org/2017/375.pdf) there are pretty famous blockchain papers on proper DLTs use.
 
@@ -81,7 +118,7 @@ Some other projects rely on Smart Contracts: however this introduces another IT 
 
 Again on the performance: the time of doctor is really precious. Time left waiting for a transaction to be processed in the blockchain is time left to the patient treatment: doctors can't simply wait minutes for a HL7 ADT to be processed by the blockchain. We cannot have blockchain stopping healthcare practicionners from admitting a patient.
 
-##Is off-chain storage good?
+## Is off-chain storage good?
 
 Some DLT projects utilise pointers to data stored in a off-chain infrastructure. In particular, there are some using FHIR resources identifiers in the blockchain to guarantee a property (e.g., access control, patient-centric access to EHR, or data integrity). I don’t see blockchain acting as a market disruptor, but, in contrast, I see blockchain makes these projects more complicated, for two reasons:
 
@@ -91,11 +128,11 @@ Some DLT projects utilise pointers to data stored in a off-chain infrastructure.
 
 The second point may have a corollary in the sense that if the goal is to achieve data integrity, and the blockchain implementation used is inefficient, an application including a database with properly signed data (e.g., using any aDES) is more suitable in terms of performance (although I don’t have done any tests).
 
-##Marrying a single blockchain project
+## Marrying a single blockchain project
 
 Other DLT initiatives propose visionary technologies and appealing solutions. However, as we already saw with the EIF story, homogeneity conflicts with interoperability, and lets adapters  proliferate.
 
-#Conclusion
+# Conclusion
 
 Healthcare can definitely exploit the DLTs for instance in patient matching, and resource consumption rewards. 
 
