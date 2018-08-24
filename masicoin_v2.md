@@ -68,9 +68,9 @@ The EU e-SENS project introduced [5 more interoperability levels](http://wiki.ds
 
 ![# e-SENS Technical Levels](http://www.mascanc.net/tl.png "e-SENS Interoperability Levels")
 
-The HiMMS definition stops at the second level, while e-SENS has added both organisational and legal interoperability to the mix, because cross country interoperability is one of the aim of the project.
+The HiMMS definition covers only data exchange, while e-SENS has added both organisational and legal interoperability to the mix, because cross country interoperability is one of the aim of the project.
 
-Vendors shall apply to common rules. Those rules are international data exchange standards. Still, Grace Lewis ([Bass et al.]) explicitly mention that _"standards alone are not enough to guarantee interoperability"_.
+Vendors shall apply to common rules. Those rules are set by international standards. Still, Grace Lewis ([Bass et al.]) explicitly mention that _"standards alone are not enough to guarantee interoperability"_.
 
 Andy Tanembaum once said ["The nice thing about standards is that you have so many to choose from"](https://en.wikiquote.org/wiki/Andrew_S._Tanenbaum) which is undoubtedly true.
 
@@ -85,7 +85,7 @@ The two ground concepts in the architecture design process are the Reference Arc
 1. A _Reference Architecture_ is the generic architecture that provides guidelines and options for the development of specific architectures and solution implementations. 
 2. A _Solution Architecture_ describes the particular business operations/activities and how the information systems and technology support them. It typically applies to a single project/organisation.
 
-Agilists may comment that architeture it's a BDUF, and YAGNI. That's a false fact, as the work of [Meyer] and [Babar et al.] describe.
+Agilists may comment that architeture it's a Basic-Design-Up-Front, BDUF, and You-Aren't-Gonna-Need-It, YAGNI. That's a false fact, as the work of [Meyer] and [Babar et al.] describe.
 
 [TOGAF](http://www.opengroup.org/subjectareas/enterprise/togaf), and [IHE](http://www.ihe.net) provide a methdological means to define the solution and reference architectures. In particular, IHE has been regulated by the EU commission with decision ​[**(EU) 2015/1302 of 28 July 2015**](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_ 99_R_0011).
 
@@ -103,7 +103,7 @@ The basic idea of the Business Software Alliance lobbying was that software _hom
 
 ## Blockchain and Interoperability
 
-Blockchain is a distributed ledger, and is, in this text from now on referred to as a Distributed Ledger Technology (DLT). [Wattenhofer] defines the blockchain _as the longest path from the genesis block, i.e., root of the tree, to a leaf. The blockchain acts as a consistent transaction history on which all nodes eventually agree._ On each transaction some code can be executed in different ways and takes different names (e.g., Smart Contracts, Chaincode, etc). From this definition it should be clear what a blockchain is not: *an efficient database*. Storing unstructured data in a blockchain guarantees poor performance but still, depends on the blockchain deployment, whether public or private and on the consensus algorithm. [Here](https://blockchainatberkeley.blog/building-it-better-a-simple-guide-to- blockchain-use-cases-de494a8f5b60) and [here](https://eprint.iacr.org/2017/375.pdf) there are pretty famous blockchain papers on proper DLTs use.
+Blockchain is a distributed ledger, and is, in this text from now on referred to as a Distributed Ledger Technology (DLT). [Wattenhofer] defines the blockchain _as the longest path from the genesis block, i.e., root of the tree, to a leaf. The blockchain acts as a consistent transaction history on which all nodes eventually agree._ On each transaction some code can be executed in different ways and takes different names (e.g., Smart Contracts, Chaincode, etc). From this definition it should be clear what a blockchain is not: *an efficient database*. Storing unstructured data in a blockchain guarantees poor performance but still, depends on the blockchain deployment, whether public or private and on the consensus algorithm: privater blockchain can run a more efficient consensus strategy (or don't need one at all) since there is a certain level of trust amongst the nodes. [Here](https://blockchainatberkeley.blog/building-it-better-a-simple-guide-to- blockchain-use-cases-de494a8f5b60) and [here](https://eprint.iacr.org/2017/375.pdf) there are pretty famous blockchain papers on proper DLTs use.
 
 Some projects, like Ethereum, store data in a public blockchain. However this introduces several problems in the healthcare domain:
 
@@ -114,7 +114,7 @@ Some projects solve 1) and 2) by using encryption, but it is unwise to trust an 
 
 Some other projects rely on Smart Contracts: however this introduces another IT security problem. Ethereum, writes a smart contract, "in stone". However, at the time of writing, Solidity is at version 0.4.xx, and [there are some rumors about its design flaws](https://news.ycombinator.com/item?id=14691212), and if a bug is introduced in the contract code it can't be simply corrected. Of course, smart contracts are audited, but the auditor performs static analysis checks using today's security knowledge, which can change in future, thereby introducing new issues and breaches. Moving between contracts version in Ethereum is an hard work (e.g., [via the proxy call](https://blog.zeppelinos.org/proxy-patterns/)). Other DLT (such as [Hyperledger](http://hyperledger.org)) allows the update of smart contract's code. But then, if few people can update a smart contract potentially holding economic value, we inherit the IT security problem of, who is entitled to change the contract? We loose the benefit of cryptography (the immutability of the smart contract), by rephrasing it as an IT Security problem (IA&A). Moreover, most of the auditors that I encountered, do not disclose the real persons behind the audit, and usually, audits are performed by creating some unit (e.g., with Truffle) tests, which is basically only defining a good test coverage, which is not a good indicator, [as this anecdote shows](https://dev.to/conectionist/why-code-coverage-is-not-a-reliable-metric -327l).
 
-[EOS](https://eos.io) is a new and promising blockchain implementation, which uses the DPoS consensus algorithm. It also uses WASM as language to write smart contracts. On the negative side, the lack of adequate analysis on DPoS ([only one explanation exists](https://steemit.com/dpos/@dantheman/dpos-consensus-algorithm-this -missing-white-paper)) suggests careful evaluation of this technology in a real world. Mathematical proof of DPoS would be needed before medical data is injected into EOS. [Cardano](https://cardano.org) claims to have such mathematical proof. As an example, recently [De Angelis et al.] proved that the the Proof-of-Authority protocol for permissioned blockchain deployed over WANs experimenting Byzantine nodes, does not provide adequate consistency guarantees for scenarios where data integrity is essential. To my best knowledge no formal proof on DPoS has been done yet.
+[EOS](https://eos.io) is a new and promising blockchain implementation, which uses the Delegate Proof-of-Stake (DPoS) consensus algorithm. It also uses WASM as language to write smart contracts. On the negative side, the lack of adequate analysis on DPoS ([only one explanation exists](https://steemit.com/dpos/@dantheman/dpos-consensus-algorithm-this -missing-white-paper)) suggests careful evaluation of this technology in a real world. Mathematical proof of DPoS would be needed before medical data is injected into EOS. [Cardano](https://cardano.org) claims to have such mathematical proof. As an example, recently [De Angelis et al.] proved that the the Proof-of-Authority protocol for permissioned blockchain deployed over WANs experimenting Byzantine nodes, does not provide adequate consistency guarantees for scenarios where data integrity is essential. To my best knowledge no formal proof on DPoS has been done yet.
 
 Again on the performance: the time of doctor is really precious. Time left waiting for a transaction to be processed in the blockchain is time left to the patient treatment: doctors can't simply wait minutes for a HL7 ADT to be processed by the blockchain. We cannot have blockchain stopping healthcare practicionners from admitting a patient.
 
@@ -130,11 +130,13 @@ The second point may have a corollary in the sense that if the goal is to achiev
 
 ## Marrying a single blockchain project
 
-Other DLT initiatives propose visionary technologies and appealing solutions. However, as we already saw with the EIF story, homogeneity conflicts with interoperability, and lets adapters  proliferate.
+Other DLT initiatives propose visionary technologies and appealing solutions. However, as we already saw with the EIF story, homogeneity conflicts with interoperability, and lets adapters proliferate to accomodate with yet-another technology.
+
+![# How standards proliferate](https://imgs.xkcd.com/comics/standards.png  "How standards proliferate")
 
 # Conclusion
 
-Healthcare can definitely exploit the DLTs for instance in patient matching, and resource consumption rewards. 
+Healthcare can definitely exploit the DLTs for instance in patient matching, and resource consumption rewards (e.g., paying to access the IT resource). 
 
 Patient matching involves the typical case when a patient, or even a doctor, has to be identified and authenticated. There are interesting ideas such as the concept of self-sovereign identities, clinical research, etc. [More information can be found here](https://healthcaresecprivacy.blogspot.com/2017/03/healthcare-blockc hain-use.html).
 
