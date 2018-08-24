@@ -8,14 +8,14 @@ This article discusses the issue of interoperability and blockchain in the healt
 
 There article is organised into two parts:
 
-* The first part explains how healthcare Information Technology could achieve a good level of interoperability.
+* The first part explains how the Healthcare Information Technology industry could achieve a good level of interoperability.
 * The second part exposes what I consider some common pitfalls affecting a number of blockchain use-cases that were brought to my attention while attending some DLT-related events.
 
 # Part 1
 
 ## Interoperability
 
-The introduction of IT systems in the healthcare domain began in the 80s, with the advent of initiatives such as [DICOM](http://dicom.nema.org), and [Health Level 7](http://hl7.org) which introduced an initial digitalisation step.
+The introduction of IT systems in the healthcare domain began in the 80s, with the advent of initiatives such as [DICOM](http://dicom.nema.org), and [Health Level 7](http://hl7.org) which made the first steps towards digitalisation.
 
 The [ISO 27002](https://en.wikipedia.org/wiki/ISO/IEC_27002) specification defines the guidelines for IT system security regarding CIA triad, Confidentiality, Integrity, and Availability.
 
@@ -68,7 +68,7 @@ The EU e-SENS project introduced [5 more interoperability levels](http://wiki.ds
 
 ![# e-SENS Technical Levels](http://www.mascanc.net/tl.png "e-SENS Interoperability Levels")
 
-The HiMMS definition covers only data exchange, while e-SENS has added both organisational and legal interoperability to the mix, because cross country interoperability is one of the aim of the project.
+The HiMMS definition covers only data exchange (second level), while e-SENS has added both organisational and legal interoperability to the mix, because cross country interoperability is one of the aim of the project.
 
 Vendors shall apply to common rules. Those rules are set by international standards. Still, Grace Lewis ([Bass et al.]) explicitly mention that _"standards alone are not enough to guarantee interoperability"_.
 
@@ -78,18 +78,20 @@ Standards, without any governance, cannot really achieve interoperability. Anyon
 
 ## The need for Enterprise Architectures
 
-Enterprise Architectures come to the rescue. In fact, another architectural step has to be adopted, precisely the establishment of a governing structure over the precise selection of standards, to ensure a continuum of the economic and technical investments, such that a chosen technology will survive beyond the vendors proposing it and the possible deviations from the original intended standards. Having a so-called Vendor Neutral Architecture (VNA) provides an example of this. These concepts feed into to the definition of _enterprise architecture_. 
+Enterprise Architectures come to the rescue. 
+
+In fact, another architectural step has to be adopted, precisely the establishment of a governing structure over the precise selection of standards, to ensure a continuum of the economic and technical investments, such that a chosen technology will survive beyond the vendors proposing it and the possible deviations from the original intended standards. Having a so-called Vendor Neutral Architecture (VNA) provides an example of this. These concepts feed into to the definition of _enterprise architecture_. 
 
 The two ground concepts in the architecture design process are the Reference Architecture and the Solution Architecture. 
 
 1. A _Reference Architecture_ is the generic architecture that provides guidelines and options for the development of specific architectures and solution implementations. 
 2. A _Solution Architecture_ describes the particular business operations/activities and how the information systems and technology support them. It typically applies to a single project/organisation.
 
-Agilists may comment that architeture it's a Basic-Design-Up-Front, BDUF, and You-Aren't-Gonna-Need-It, YAGNI. That's a false fact, as the work of [Meyer] and [Babar et al.] describe.
+Agilists may comment that architeture it's a bit of a waterfall excercise (BDUF), and might not be needed at all (YAGNI). Criticisms to this point are described in the works of [Meyer] and [Babar et al.].
 
 [TOGAF](http://www.opengroup.org/subjectareas/enterprise/togaf), and [IHE](http://www.ihe.net) provide a methdological means to define the solution and reference architectures. In particular, IHE has been regulated by the EU commission with decision ​[**(EU) 2015/1302 of 28 July 2015**](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_ 99_R_0011).
 
-## Choosing a standard, or a single product, is a bad idea.
+## The problem with a unique alternative
 
 We, therefore, understand that we need interoperability to develop and choose sofwtware for healthcare. To achieve interoperability we need a standard, no, wait, we need a _organisation_ which supports and governs the standards, then we need to test, certify, oh my! Isn't it better to all select the same prodfuct and deploy it worldwide? No. Here the story of the European Interoperability Framework (EIF) and the Free Software Foundation comes into play.
 
@@ -97,7 +99,8 @@ At the beginning of the century, the EU commission made the right decision: to m
 
 _Looking back to the consultation draft, it is obvious that during the development of EIFv2, the European Commission has abandoned the concept of Open Standards as a key enabler for interoperability. This is a central reason why the current draft would see the European Interoperability Framework become a shadow of its former self._
 
-The basic idea of the Business Software Alliance lobbying was that software _homogeneity_ guarantees interoperability, while other approaches, well, probably not. BSA clearly wanted to achieve a vendor lock-in situation, disqualifying the continuum concept described above. The EIFv3 (or the New EIF) explicitly promotes open standards, and [Free Software has been indicated as one of the factors of enhanced interoperability](https://fsfe.org/activities/os/eif-v3.en.html).
+The basic idea of the Business Software Alliance lobbying was that software _homogeneity_ guarantees interoperability, while other approaches, well, probably not. BSA clearly wanted to achieve a vendor lock-in situation, disqualifying the continuum concept described above. The EIFv3 (or the New EIF) explicitly promotes open standards, and [Free Software has been indicated as one of the factors of enhanced interoperability](https://fsfe.org/activities/os/eif-v3.en.html). This new version "focus on openness and information management, data portability, interoperability governance, and integrated service delivery." as [Reported by the Commission](https://ec.europa.eu/isa2/eif_en). 
+
 
 # Part 2
 
